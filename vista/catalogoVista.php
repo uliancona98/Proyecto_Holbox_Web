@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php  echo $aplicacion;?> </title>
-    <link rel="stylesheet" href="libs/estilos_catalogo.css" type="text/css">
-    <link rel="stylesheet" href="libs/estilosGenerales.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/estilos_catalogo.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/estilosGenerales.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
 
 </head>

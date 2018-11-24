@@ -1,9 +1,9 @@
 <?php
                     /*Carga las imagenes de LOS USUARIOS*/
 function consultar($sentencia){
-                     include("conexionBDCatalogo.php");      
+                     include('core/Conexion.php');      
                     $query = "SELECT * FROM restaurantes"." " . $sentencia;
-                                      
+                    $conexion= getConexion();                  
                     if($conexion){
                         $arrayRestaurantes = array();
                         $resultado = $conexion->query($query);

@@ -1,16 +1,13 @@
 <?php
 /**
-* Modelo de recurso
+* Modelo de catalogo
 *
-* Contiene todas las funciones para el procesamientos de datos para un recurso
-*
-* @package recurso
-* @author Victor Hugo Menendez Dominguez <mdoming@uady.mx>
-* @version 1.5
-* @date 18/Abril/2009
+* Contiene todas las funciones para el procesamientos de datos para el catalogo de restaurantes*
+* 
 **/
 
 /** Carga las funciones para la gestion de bases de datos*/
+//VERIFICAR SI SE CAMBIAN O QUE PEPE
 include('libs/conexionCatalogo.php');
 
 /**
