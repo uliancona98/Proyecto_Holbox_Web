@@ -1,0 +1,139 @@
+<?php
+/**
+* Modelo de recurso
+*
+* Contiene todas las funciones para el procesamientos de datos para un recurso
+*
+* @package recurso
+* @author Victor Hugo Menendez Dominguez <mdoming@uady.mx>
+* @version 1.5
+* @date 18/Abril/2009
+**/
+
+/** Carga las funciones para la gestion de bases de datos*/
+include('libs/conexionCatalogo.php');
+
+/**
+* Elimina la informacion de un recurso
+*
+* @param int $recurso Id del recurso
+* @return integer Numero de registros eliminados
+*
+* @uses ejecutarSQL
+*/
+function eliminarRecurso($recurso) {
+
+	$SQL = 'DELETE FROM recursos WHERE id_recurso = ' . $usuario['id_recurso'];
+	$resultado = ejecutarSQL($SQL);
+
+	return $resultado;
+}
+
+/**
+* Genera el titulo de un formulario
+*
+* @return text Titulo del formulario
+*
+*/
+function generarTitulo() {
+
+	return "Catalogo de restaurantes";
+}
+
+function cargarPrincipal(){
+    $HTMLrespuesta= array();
+    $resultados= consultar(" ");
+
+       for($i=0; $i< count($resultados); $i++){
+            array_push($HTMLrespuesta,presentarResultados($resultados[$i]));
+       }
+    return implode(" ", $HTMLrespuesta);
+}
+
+function realizarBusqueda(){
+
+    if(!empty($_POST)){
+      $parametrosBusqueda= array();
+      $cadenaInicial= "WHERE";
+    
+    //SELECT * FROM `restaurantes` WHERE `precio`= "Costoso" AND `tipo` = "Restaurantes"
+       
+       if(isset($_POST["tipoRest"])) {
+            $tiposSolicitados= array(); 
+            for($i=0 ; $i<count($_POST["tipoRest"]);$i++){
+                $tipo= "tipo = '" . $_POST["tipoRest"][$i] . " ' ";
+                array_push($tiposSolicitados, $tipo);
+            }
+           
+            $parametrosTipo = implode(" OR ", $tiposSolicitados); 
+            array_push($parametrosBusqueda, $parametrosTipo);           
+       }
+
+       if(isset($_POST["precioRest"])) {
+           $preciosSolicitados= array(); 
+            for($i=0 ; $i<count($_POST["precioRest"]);$i++){
+                $precio= "precio = '" . $_POST["precioRest"][$i] . " ' ";
+                array_push($preciosSolicitados, $precio);
+            }           
+            $parametrosPrecio = implode(" OR ", $preciosSolicitados); 
+            array_push($parametrosBusqueda, $parametrosPrecio);  
+       }
+
+        $cadenaConsulta= $cadenaInicial ." ". implode(" AND ", $parametrosBusqueda);
+
+       $resultados= consultar($cadenaConsulta);
+
+       if(!empty($resultados)){
+          $HTMLrespuesta= array();
+          for($i=0; $i< count($resultados); $i++){
+            array_push($HTMLrespuesta,presentarResultados($resultados[$i]));
+          }
+        return implode(" ", $HTMLrespuesta);
+       }
+       return sinResultados();
+  
+    }else{
+      return cargarPrincipal();
+    }    
+}
+
+function sinResultados(){
+    return "No se encontraron restaurantes";
+}
+function presentarResultados($rest){
+
+    switch ($rest['precio']) {
+        case 'Costoso':
+            $precio= "$$$";
+            break;
+        case 'Medio':
+            $precio= "$$";
+            break;
+        case 'Economico':
+            $precio= "$";
+            break;
+        default:
+            break;
+    }
+    $image= base64_encode($rest['imagen']);
+    //<img src="data:image/jpg;base64,<?php echo base64_encode($arrayPublicaciones[$i]['imagen']);" alt="mangle" style="width:90%"/>
+    
+ $columnas= <<<XYZ
+            <div class="contenedor-restaurante">
+                <img src="data:image/jpg;base64,{$image}" alt="{$rest['nombre']}" style="width:100%">
+                <div class="descripcion" >
+                    <div class="item name" > {$rest['nombre']} </div>
+                    <div class="item price">{$precio}</div>
+                    <div class="item horario">{$rest['horarioAbierto']}-{$rest['horarioCerrado']} </div>
+                    <div class="item telefono">{$rest['direccion']} </div>
+                </div>
+
+                <span class="infoAdicional">
+                 {$rest['direccion']}
+                </span>
+            </div>
+XYZ;
+return $columnas;
+}
+
+?>
