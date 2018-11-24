@@ -1,9 +1,9 @@
 <?php
                     /*Carga las imagenes de LOS USUARIOS*/
 function consultar($sentencia){
-                     include("../config/conexion2.php");      
+                     include('core/Conexion.php');      
                     $query = "SELECT * FROM restaurantes"." " . $sentencia;
-                                      
+                    $conexion= getConexion();                  
                     if($conexion){
                         $arrayRestaurantes = array();
                         $resultado = $conexion->query($query);
@@ -14,10 +14,10 @@ function consultar($sentencia){
                             }
                             return $arrayRestaurantes;
                         }else{
-                            echo "No hay restaurantes para mostrar";
+                            console.log("No hay restaurantes para mostrar");
                         }
                     }else{
-                        echo "Conexion con la base de datos fallida";
+                        console.log( "Conexion con la base de datos fallida");
                     }
 
 return $arrayRestaurantes;
