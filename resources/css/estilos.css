@@ -1,0 +1,234 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.swal2-shown aside {
+    height: 100vh;
+}
+
+
+/** Login **/
+.login,
+.signup{
+    background: #FF6833;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.contenedor-formulario {
+    background: linear-gradient(to right, mediumpurple, lightsalmon);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.contenedor-formulario h1 {
+    text-align: center;
+    color: white;
+}
+
+.contenedor-formulario h1 span {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.caja-login {
+    background-color: #F2F2F2;
+    border: 1px solid #707070;
+    max-width: 650px;
+    width: 90%;
+    margin: 0 auto;
+    min-height: 300px;
+    -webkit-box-shadow: 0px 25px 35px -17px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 0px 25px 35px -17px rgba(0, 0, 0, 0.56);
+    box-shadow: 0px 25px 35px -17px rgba(0, 0, 0, 0.56);
+    padding: 3rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.campo label {
+    flex: 0 0 100px;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.campo input[type="text"],
+.campo input[type="password"],
+.campo input[type="datetime"] {
+    height: 3rem;
+    border: 0;
+    flex: 1;
+    border: 1px solid #455A64;
+    border-radius: 5rem;
+    padding-left: 2rem;
+}
+
+.enviar {
+    justify-content: flex-end;
+}
+
+.boton {
+    background-color: #DAF7A6;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    display: block;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+   border: none;
+    font-weight: 900;
+    
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: rgb(219, 184, 29)!important;
+}
+
+.campo a {
+    color: black;
+    text-decoration: none;
+}
+
+/*Modal*/
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    
+}
+
+.modal-header h2{
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+.modal-header span{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.modal-header h4{
+    text-align: center;
+    color: white;
+}
+
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+
+.botonModalA  {
+    background-color: #008000;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+   border: none;
+    font-weight: 900;
+    margin-left:auto;
+      margin-right:auto;
+}
+
+
+.botonModalM  {
+    background-color: #FFD700;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+   border: none;
+    font-weight: 900;
+    margin-left:auto;
+      margin-right:auto;
+}
+
+
+.botonModalB  {
+    background-color: #B22222;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+   border: none;
+    font-weight: 900;
+    margin-left:auto;
+      margin-right:auto;
+}
+
+
+.botonModalC  {
+    background-color: #696969;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+   border: none;
+    font-weight: 900;
+    margin-left:auto;
+      margin-right:auto;
+}
+
+textarea {
+    width: 1000px;
+    height: 50px;
+  }
+
+
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}

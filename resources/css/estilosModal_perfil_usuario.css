@@ -1,0 +1,96 @@
+.modal {
+    overflow: auto;
+    display: none;
+}
+
+/*Tamaño del modal. no tiene que ver con la imagen del modal*/
+.modal:target {	
+    display: block;
+    position: fixed;
+    background: rgba(59, 50, 50, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal h3 {
+    color: rgb(226, 209, 209);
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0;
+}
+/*Vertical*/
+.imagenModal { 
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+.imagenModal1 {
+    margin: 1%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+/*
+.imagenModal img {  
+	height: 100%;
+        width: auto;
+	max-width: 100%;
+	border: 4px solid rgb(36, 33, 33);
+	box-sizing: border-box;
+	max-height: 80%;
+}
+*/
+
+/*Vertical y cuadrada*/
+.imagenModal img { 
+    
+    height: 75%;
+    width: auto;
+    max-height: 600px;
+    border: 4px solid rgb(36, 33, 33);
+}
+/*HORIZONTAL*/
+.imagenModal1 img {
+    width: 85%;
+    max-width:620px;
+    height: auto;
+    border: 4px solid rgb(36, 33, 33);
+}
+.imagenModal1 p{
+    text-align: center;
+    font-size: 100%;
+    width: 80%;/*Vertical*/
+    color: white; /*Vertical*/
+    font-size: 1.5rem;
+    margin: 1.2rem;
+}
+.imagenModal p{
+    text-align: center;
+    font-size: 100%;
+    width: 50%;/*Vertical*/
+    color: white; /*Vertical*/
+    font-size: 1.5rem;
+    margin: 1.2rem;
+}
+.cerrar {
+    display: flex;
+    background: rgb(22, 21, 21);
+    width: 30px;
+    height: 30px;
+    margin: auto auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(238, 238, 238);
+    padding: 5px;
+    border-radius: 50%;
+    line-height: 25px;
+}

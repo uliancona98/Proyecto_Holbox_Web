@@ -1,0 +1,133 @@
+div.contenedor{
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/*contenido principal*/
+div.contenido::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+main{
+    width: 70%;
+    float: left;
+    padding-right: 40px;
+    box-sizing:border-box; /*puede causar problemas*/
+}
+/*Entardas de mis post*/
+article{
+    margin-top: 30px;
+
+}
+
+h2{
+    color: #000000;
+}
+
+article img{
+    float: left;
+    width: 300px;
+    margin-right: 30px;
+}
+
+article p{
+    line-height: 2;
+    text-align: justify;
+}
+
+.boton{
+    background-color: #000000;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+/*Estilos sidebar*/
+
+aside{
+    float: right;
+    width: 30%;
+    margin-top: 30px;
+}
+
+aside ul{
+    list-style: none;
+
+}
+
+aside ul li{
+    padding: 10px 0 10px 10px;
+
+}
+
+aside ul li:hover{
+    background-color: #00b8e4;
+    cursor: pointer;
+}
+
+aside ul li a{
+    color: #000000;
+     text-decoration: none;
+}
+aside ul li:hover a{
+    color: #ffffff;
+}
+
+
+
+main img{
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+/*dudas*/
+@media screen and (max-width: 400px){
+    div.contenedor{
+        width: 100%;
+    }
+    aside{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1281px){
+    div.contenedor{
+        width: 100%;
+    }
+    aside{
+        display: 100%;
+    }
+}
+
+@media screen and (max-width: 1025px){
+    div.contenedor{
+        width: 100%;
+    }
+    aside{
+        display: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    div.contenedor{
+        width: 100%;
+    }
+    aside{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    main{
+        width: 100%;
+    }
+ 
+    aside{
+        width: 100%;
+    }
+ }

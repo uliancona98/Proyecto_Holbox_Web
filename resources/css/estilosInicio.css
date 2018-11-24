@@ -1,0 +1,220 @@
+/*Selector de etiquetas y universal*/
+* {
+    margin: 0;
+    padding: 0;
+    /*padding-left: 15px;*/
+    box-sizing: border-box;
+    font-family: Montaga, Verdana, sans-serif, Arial;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #839A91;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+[class*="tamano-"] {
+    float:left;
+}
+
+/*Selectores de contenido*/
+.middle-content {
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#center {
+    background: #fff;
+    /*background-color: rgba(78,142,232,.39);*/
+    box-shadow: 0 2px 5px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#information {
+    word-wrap: break-word;
+    padding: 20px;
+}
+
+#information p {
+    font-size: 1.5em;
+}
+
+#maps {
+    padding: 20px;
+    text-align: center;
+}
+
+iframe.maps {
+    width: 23em;
+    height: 20em;
+}
+
+#video {
+    /*background-color: rgba(252,211,21,.35);*/
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/*Slider*/
+.image-text{
+    color: white;
+    background: linear-gradient(to right, mediumpurple,lightsalmon);
+    overflow: hidden;
+}
+
+.slider div{
+    font-size: 2em;
+    
+    text-align: center;
+    position: relative;
+    transform:translate(0%,-500%);
+}
+
+.slider {
+    background-color: #fff;
+    /*background-color: rgba(211,201,201,.5);*/
+    box-shadow: 0 2px 5px 0;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation-name: cambio;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+.slider li {
+    list-style-type: none;
+    width: 100%;
+}
+
+.slider img{
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    16% {margin-left: 0;}
+    
+    20% {margin-left: -100%;}
+    36% {margin-left: -100%;}
+    
+    40% {margin-left: -200%;}
+    56% {margin-left: -200%;}
+    
+    60% {margin-left: -300%;}
+    76% {margin-left: -300%;}
+    
+    80% {margin-left: -400%;}
+    100% {margin-left: -400%;}
+}
+/*INICIO MODAL*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+/* Modal Content (video) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 50%;
+    max-width: 700px;
+}
+/* Add Animation */
+.modal-content {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+/*FIN MODAL*/
+
+
+
+
+#video-hover {
+   position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#video-over:hover {
+    
+}

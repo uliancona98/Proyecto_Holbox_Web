@@ -1,0 +1,212 @@
+/*Selector de etiquetas y universal*/
+* {
+    margin: 0;
+    padding: 0;
+    /*padding-left: 15px;*/
+    box-sizing: border-box;
+    font-family: Montaga, Verdana, sans-serif, Arial;
+}
+
+#sesiones{
+    text-align: right;
+    background-color: rgba(51,51,51,.95);
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #839A91;
+}
+
+footer{
+    background-color: rgba(51,51,51,.95);
+    margin-top: 10px;
+    box-shadow: 0 2px 5px 0;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+/*Selectores de contenido*/
+.header-general {
+    
+    background-image: url("banner.jpg");
+    overflow: hidden;
+    background-size: cover;
+    position:inherit;
+    box-shadow: 0 2px 5px 0;
+}
+
+[class*="tamano-"] {
+    float:left;
+}
+
+/*logo*/
+#logo {
+    text-align:left;
+    word-wrap: break-word;
+}
+
+#logo-derecho {
+    float:right;
+    word-wrap: break-word;
+    text-align:right;
+}
+
+#logo span {
+    font-family: fantasy;
+    text-decoration: overline;
+    line-height: 1;
+    font-size: 3.5em;
+    letter-spacing: .1em;
+    color: rgba(252, 252, 252, 0.5);
+    
+}
+
+#logo-derecho span {
+    font-family: sans-serif;
+    color:aliceblue;
+    text-shadow: 0 2px 5px;
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+}
+
+/*Menu*/
+.menu-general {
+    /*background-color: #333333;*/
+    background-color: rgba(51,51,51,.95);
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+.menu-general ul {
+    overflow: hidden;
+    list-style-type: none;
+    margin: auto;
+    padding: auto;
+}
+
+.nav > li {
+    float:left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #111111;
+}
+
+.nav li ul {
+    display: none;
+    position: relative;
+    min-width: 140px;
+}
+
+.nav li:hover > ul{
+    display: block;
+}
+/*media querys*/
+[class*="tamano-"] {
+    width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+    
+    .tamano-1 {width: 8.33%;}
+    .tamano-2 {width: 16.66%;}
+    .tamano-3 {width: 25%;}
+    .tamano-4 {width: 33.33%;}
+    .tamano-5 {width: 41.66%;}
+    .tamano-6 {width: 50%;}
+    .tamano-7 {width: 58.33%;}
+    .tamano-8 {width: 66.66%;}
+    .tamano-9 {width: 75%;}
+    .tamano-10 {width: 83.33%;}
+    .tamano-11 {width: 91.66%;}
+    .tamano-12 {width: 100%;}
+}
+
+@media screen and (max-width: 1200px) {
+    .menu ul {
+        position:relative;
+        left: 10%;
+    }
+    #logo {
+        text-align:center;
+        word-wrap: break-word;
+    }
+    #logo-derecho {
+        word-wrap: break-word;
+        text-align:center;
+    }
+
+}
+
+/*footer*/
+
+#about {
+    padding-top: 10px; 
+    width: 100%;
+    overflow: hidden;
+}
+
+#about ul{
+    overflow: hidden;
+    list-style-type: none;
+    margin: 10px;
+}
+
+#nosotros {
+    line-height: 15px;
+    letter-spacing: -1px;
+    color:whitesmoke;
+    font-size: .80em;
+}
+
+#nosotros ul {
+    text-align: center;
+}
+
+
+#menu-footer {
+    padding-left: 10%;
+    text-align: center;
+    overflow: hidden;
+    font-size: .90em;
+}
+
+#menu-footer ul {
+    margin-top: 5%;
+}
+
+#menu-footer li{
+    float: left;
+}
+
+#menu-footer li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 3px;
+    text-decoration: none;
+}
+
+#menu-footer li a:hover {
+    background-color: #111111;
+}
+
+#copyright {
+    color: white;
+    text-align: center;
+    font-size: .9em;
+}
