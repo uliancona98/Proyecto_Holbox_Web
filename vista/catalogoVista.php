@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php  echo $aplicacion;?> </title>
-    <link rel="stylesheet" href="resources/css/estilos_catalogo.css" type="text/css">
-    <link rel="stylesheet" href="resources/css/estilosGenerales.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url_base;?>resources/css/estilos_catalogo.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url_base;?>resources/css/estilosGenerales.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
 
 </head>
@@ -13,22 +13,47 @@
 <body>
 
 <header class="header-general">
-    <div style="padding: 8px 16px; overflow: hidden;">
-        <div class="tamano-5" id="logo"><span>HOLBOX</span></div>
-        <div class="tamano-5" id="logo-derecho"><span>VIVE UNA EXPERIENCIA SIN IGUAL</span></div>
-    </div>
-    <div class="menu-general">
-        <nav>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#history">Historia</a></li>
-                <li><a href="#toDo">¿Qué hacer?</a></li>
-                <li><a href="#food">Gastronomía</a></li>
-                <li><a href="flora">Flora y Fauna</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+            <div style="padding: 8px 16px; overflow: hidden;">
+                <div class="tamano-5" id="logo"><span>HOLBOX</span></div>
+                <div class="tamano-5" id="logo-derecho"><span>VIVE UNA EXPERIENCIA SIN IGUAL</span></div>
+            </div>
+            <div class="menu-general">
+                <nav>
+                    <ul class ="nav">
+                        <li><a href="../inicio.php">Inicio</a></li>
+                        <li><a href="">Secciones</a>
+                            <ul>
+                                <li><a href="Historia.php">Historia</a></li>
+                                <li><a href="LugaresHolbox.php">¿Qué hacer?</a></li>
+                                <li><a href="Gastronomia.php">Gastronomía</a></li>
+                                <li><a href="FloraFauna.php">Flora y Fauna</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="experienciasH.php">Experiencias</a></li>
+                        <li><a href="<?php echo $url_base;?>catalogo/iniciarCatalogo"> Catálogo</a></li>
+                         <?php
+                        //include("/sistemas/sistema_login/manejador_sesiones.php");                        
+                        //$menu = get_menu();
+                        //foreach( $menu as $opcion => $link){
+                          //  $link = "../".$link;
+                            //echo '<li><a href=\"$link\">$opcion</a></li>';
+                        //}
+                        ?> 
+                    </ul>
+                </nav>
+            </div>
+            <div id="sesiones">
+                <?php
+                if(empty($_SESSION)){
+                    echo "<label><a href='../sistemas/sistema_login/login.php'>Iniciar Sesión  </a></label>";
+                    echo "<label><a href='../sistemas/sistema_signup/signup.php'> Registrarse</a></label>";
+                }else{
+                    echo "<label>Bienvenido ".$_SESSION['nombre'] ." </label>";
+                    echo "<label><a href='../sistemas/sistema_login/logout.php'>Cerrar Sesión </a></label>";
+                }
+                ?>
+            </div>
+            </header>
 
 
 <!--.contenido-->
