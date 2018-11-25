@@ -35,7 +35,9 @@ function accion_iniciarCatalogo() {
 	include('modelo/catalogoModelo.php');
 	
     $titulo = generarTitulo(); 
+
     $catalogoPrincipal= cargarPrincipal();
+    
 	/** @ignore */
 	// Pasa a la vista toda la informacion que se desea representar
 	

@@ -12,7 +12,7 @@
 * Nombre de la aplicacion
 * @global string $aplicacion
 */
-$aplicacion = 'MVCCatalogo';
+$aplicacion = 'Proyecto_Holbox_Web';
 
 /**
 * Sistema operativo (WINDOWS|UNIX|MAC)
@@ -24,13 +24,13 @@ $sistema_operativo = 'WINDOWS';
 * Directorio de instalacion de la aplicacion
 * @global string $directorio_base
 */
-$directorio_base = 'c:/wamp64/www/MVCCatalogo/';
+$directorio_base = 'c:/wamp64/www/Proyecto_Holbox_Web/';
 
 /**
 * URL de la aplicacion
 * @global string $url_base
 */
-$url_base = 'http://localhost/MVCCatalogo/';
+$url_base = 'http://localhost/Proyecto_Holbox_Web/';
 
 /**
 * Controlador por defecto
