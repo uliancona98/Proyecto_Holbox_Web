@@ -238,4 +238,3 @@ select * from permisos order by id_modulo;
 select * from permisos;
  SELECT * FROM MODULOS;
  select * from roles_permisos order by id_rol;
-
