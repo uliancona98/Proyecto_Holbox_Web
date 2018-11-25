@@ -8,8 +8,8 @@ session_start();
         <title>Lugares Holbox</title>
         <meta charset="UTF-8">
         <link href='https://fonts.googleapis.com/css?family=Montaga' rel='stylesheet'>
-        <link rel="stylesheet" href="../archivos_necesarios/css/estilolugaresHolbox.css">
-        <link rel="stylesheet" href="../archivos_necesarios/css/estilosGenerales.css">
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilolugaresHolbox.css">
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilosGenerales.css">
     </head>
     <body>
 
@@ -22,13 +22,14 @@ session_start();
             <div class="menu-general">
                 <nav>
                     <ul class ="nav">
-                        <li><a href="../inicio.php">Inicio</a></li>
+                        <li><a href="<?=$url_base?>paginas/Inicio">Inicio</a></li>
                         <li><a href="">Secciones</a>
                             <ul>
-                                <li><a href="Historia.php">Historia</a></li>
-                                <li><a href="LugaresHolbox.php">¿Qué hacer?</a></li>
-                                <li><a href="Gastronomia.php">Gastronomía</a></li>
-                                <li><a href="FloraFauna.php">Flora y Fauna</a></li>
+                                <li><a href="<?=$url_base?>paginas/Inicio">Inicio</a></li>
+                                <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                                <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                                <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                                <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
                             </ul>
                         </li>
                         <li><a href="experienciasH.php">Experiencias</a></li>
@@ -69,7 +70,7 @@ session_start();
 
         <!-- Lugares para visitar cuerpo -->
         <div class="section">
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item1.jpg); background-color: rgb(28, 144, 173);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item1.jpg); background-color: rgb(28, 144, 173);">
                 <div id="sub1">
                     <h2>Nado con el Tiburón Ballena</h2>
                     <div class="textoIzquierda">
@@ -88,7 +89,7 @@ session_start();
                 </div>
             </div>
 
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item2.jpg); background-color: rgb(4, 18, 41);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item2.jpg); background-color: rgb(4, 18, 41);">
                 <div id="sub2">               
                     <h2>Bioluminiscencia</h2>               
                     <div class="textoDerecha">
@@ -106,7 +107,7 @@ session_start();
                 </div>
             </div>
 
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item3.jpg); color:black; background-color: rgb(214, 214, 205);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item3.jpg); color:black; background-color: rgb(214, 214, 205);">
                 <div id="sub3">
                     <h2>Punta Mosquito</h2>
                     <div class="textoIzquierda">
@@ -119,7 +120,7 @@ session_start();
                 </div>
             </div> 
             
-            <div class="subseccion"  style="background-image: url(../images/lugaresHolbox/item4.jpg); color:black; background-color: rgb(136, 187, 116);">
+            <div class="subseccion"  style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item4.jpg); color:black; background-color: rgb(136, 187, 116);">
                 <div id="sub4">
                     <h2>Paseo por los Manglares</h2>
                     <div class="textoDerecha">
@@ -133,7 +134,7 @@ session_start();
                     </div>
                 </div>
             </div>    
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item5.jpg); color:rgba(255, 255, 255, 0.959);background-color: rgb(38, 104, 11);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item5.jpg); color:rgba(255, 255, 255, 0.959);background-color: rgb(38, 104, 11);">
                 <h2 style="padding:3% 0%;">Yalahau</h2>
                 <div class="textoIzquierda">
                     <p>
@@ -144,7 +145,7 @@ session_start();
                     </p>             
                 </div>
             </div>
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item9.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(56, 192, 185);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item9.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(56, 192, 185);">
                 <div id="sub6">
                     <h2>Cabo Catoche</h2>
                     <div class="textoDerecha">
@@ -158,7 +159,7 @@ session_start();
                     </div>
                 </div>
             </div>   
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item11.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(186, 196, 165);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item11.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(186, 196, 165);">
                 <h2>Punta Cocos</h2>
                 <div class="textoIzquierda">
                     <p><strong>
@@ -172,7 +173,7 @@ session_start();
                 </div>
             </div>
 
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item13.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(102, 115, 173);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item13.jpg); color:rgba(0, 0, 0, 0.959); background-color: rgb(102, 115, 173);">
                 <h2>Isla Pasión</h2>
                 <div class="textoIzquierda">
                     <p><strong>
@@ -184,7 +185,7 @@ session_start();
                 </div>
             </div>
             
-            <div class="subseccion" style="background-image: url(../images/lugaresHolbox/item14.jpg); color:rgba(255, 255, 255, 0.959); background-color: rgb(161, 140, 123);">
+            <div class="subseccion" style="background-image: url(<?=$url_base?>resources/images/lugaresHolbox/item14.jpg); color:rgba(255, 255, 255, 0.959); background-color: rgb(161, 140, 123);">
                 <div id="sub8">
                     <h2>Isla Pájaros</h2>
                     <div class="textoDerecha">
@@ -214,34 +215,34 @@ session_start();
         <div class="section">
             <h1>Galería de imágenes, te enamorarás aún más...</h1>
             <ul class="galeria">
-                <li><a href="#img1"><img src="../images/lugaresHolbox/bio/1.jpg"></a></li>
-                <li><a href="#img2"><img src="../images/lugaresHolbox/bio/2.jpg"></a></li>
-                <li><a href="#img3"><img src="../images/lugaresHolbox/cabo_catoche/1.jpg"></a></li>
-                <li><a href="#img4"><img src="../images/lugaresHolbox/cabo_catoche/2.jpg"></a></li>
-                <li><a href="#img5"><img src="../images/lugaresHolbox/IslaPajaros/1.jpg"></a></li>
-                <li><a href="#img6"><img src="../images/lugaresHolbox/IslaPajaros/2.jpg"></a></li>
-                <li><a href="#img7"><img src="../images/lugaresHolbox/IslaPajaros/3.jpg"></a></li>
-                <li><a href="#img8"><img src="../images/lugaresHolbox/Manglares/1.jpg"></a></li>
-                <li><a href="#img9"><img src="../images/lugaresHolbox/Manglares/2.jpg"></a></li>
-                <li><a href="#img10"><img src="../images/lugaresHolbox/Yalahau/1.jpg"></a></li>
-                <li><a href="#img11"><img src="../images/lugaresHolbox/Yalahau/2.jpg"></a></li>
-                <li><a href="#img12"><img src="../images/lugaresHolbox/whaleshark/1.jpg"></a></li>
-                <li><a href="#img13"><img src="../images/lugaresHolbox/whaleshark/2.png"></a></li>
-                <li><a href="#img14"><img src="../images/lugaresHolbox/Playa/1.jpg"></a></li>
-                <li><a href="#img15"><img src="../images/lugaresHolbox/Playa/10.jpg"></a></li>
-                <li><a href="#img16"><img src="../images/lugaresHolbox/Playa/5.jpg"></a></li>
-                <li><a href="#img17"><img src="../images/lugaresHolbox/Playa/3.jpg"></a></li>
-                <li><a href="#img18"><img src="../images/lugaresHolbox/PuntaCoco/1.jpg"></a></li>
-                <li><a href="#img19"><img src="../images/lugaresHolbox/PuntaCoco/4.jpg"></a></li>
-                <li><a href="#img20"><img src="../images/lugaresHolbox/PuntaCoco/8.jpg"></a></li>
-                <li><a href="#img21"><img src="../images/lugaresHolbox/PuntaCoco/6.jpg"></a></li>
+                <li><a href="#img1"><img src="<?=$url_base?>resources/images/lugaresHolbox/bio/1.jpg"></a></li>
+                <li><a href="#img2"><img src="<?=$url_base?>resources/images/lugaresHolbox/bio/2.jpg"></a></li>
+                <li><a href="#img3"><img src="<?=$url_base?>resources/images/lugaresHolbox/cabo_catoche/1.jpg"></a></li>
+                <li><a href="#img4"><img src="<?=$url_base?>resources/images/lugaresHolbox/cabo_catoche/2.jpg"></a></li>
+                <li><a href="#img5"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/1.jpg"></a></li>
+                <li><a href="#img6"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/2.jpg"></a></li>
+                <li><a href="#img7"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/3.jpg"></a></li>
+                <li><a href="#img8"><img src="<?=$url_base?>resources/images/lugaresHolbox/Manglares/1.jpg"></a></li>
+                <li><a href="#img9"><img src="<?=$url_base?>resources/images/lugaresHolbox/Manglares/2.jpg"></a></li>
+                <li><a href="#img10"><img src="<?=$url_base?>resources/images/lugaresHolbox/Yalahau/1.jpg"></a></li>
+                <li><a href="#img11"><img src="<?=$url_base?>resources/images/lugaresHolbox/Yalahau/2.jpg"></a></li>
+                <li><a href="#img12"><img src="<?=$url_base?>resources/images/lugaresHolbox/whaleshark/1.jpg"></a></li>
+                <li><a href="#img13"><img src="<?=$url_base?>resources/images/lugaresHolbox/whaleshark/2.png"></a></li>
+                <li><a href="#img14"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/1.jpg"></a></li>
+                <li><a href="#img15"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/10.jpg"></a></li>
+                <li><a href="#img16"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/5.jpg"></a></li>
+                <li><a href="#img17"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/3.jpg"></a></li>
+                <li><a href="#img18"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/1.jpg"></a></li>
+                <li><a href="#img19"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/4.jpg"></a></li>
+                <li><a href="#img20"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/8.jpg"></a></li>
+                <li><a href="#img21"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/6.jpg"></a></li>
             </ul>
         
             <div class="modal" id="img1">
                 <h3>Bioluminiscencia</h3>
                 <div class="imagen">
                     <a href="#img21">&#60;</a>
-                    <a href="#img2"><img src="../images/lugaresHolbox/bio/1.jpg"></a>
+                    <a href="#img2"><img src="<?=$url_base?>resources/images/lugaresHolbox/bio/1.jpg"></a>
                     <a href="#img2">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -251,7 +252,7 @@ session_start();
                 <h3>Bioluminiscencia</h3>
                 <div class="imagen">
                     <a href="#img1">&#60;</a>
-                    <a href="#img3"><img src="../images/lugaresHolbox/bio/2.jpg"></a>
+                    <a href="#img3"><img src="<?=$url_base?>resources/images/lugaresHolbox/bio/2.jpg"></a>
                     <a href="#img3">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -261,7 +262,7 @@ session_start();
                 <h3>Cabo Catoche</h3>
                 <div class="imagen">
                     <a href="#img2">&#60;</a>
-                    <a href="#img4"><img src="../images/lugaresHolbox/cabo_catoche/1.jpg"></a>
+                    <a href="#img4"><img src="<?=$url_base?>resources/images/lugaresHolbox/cabo_catoche/1.jpg"></a>
                     <a href="#img4">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -271,7 +272,7 @@ session_start();
                 <h3>Cabo Catoche</h3>
                 <div class="imagen">
                     <a href="#img3">&#60;</a>
-                    <a href="#img5"><img src="../images/lugaresHolbox/cabo_catoche/2.jpg"></a>
+                    <a href="#img5"><img src="<?=$url_base?>resources/images/lugaresHolbox/cabo_catoche/2.jpg"></a>
                     <a href="#img5">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -281,7 +282,7 @@ session_start();
                 <h3>Isla Pájaros</h3>
                 <div class="imagen">
                     <a href="#img4">&#60;</a>
-                    <a href="#img6"><img src="../images/lugaresHolbox/IslaPajaros/1.jpg"></a>
+                    <a href="#img6"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/1.jpg"></a>
                     <a href="#img6">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -291,7 +292,7 @@ session_start();
                 <h3>Isla Pájaros</h3>
                 <div class="imagen">
                     <a href="#img5">&#60;</a>
-                    <a href="#img7"><img src="../images/lugaresHolbox/IslaPajaros/2.jpg"></a>
+                    <a href="#img7"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/2.jpg"></a>
                     <a href="#img7">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -301,7 +302,7 @@ session_start();
                 <h3>Isla Pajaros</h3>
                 <div class="imagen">
                     <a href="#img6">&#60;</a>
-                    <a href="#img8"><img src="../images/lugaresHolbox/IslaPajaros/3.jpg"></a>
+                    <a href="#img8"><img src="<?=$url_base?>resources/images/lugaresHolbox/IslaPajaros/3.jpg"></a>
                     <a href="#img8">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -311,7 +312,7 @@ session_start();
                 <h3>Manglares</h3>
                 <div class="imagen">
                     <a href="#img7">&#60;</a>
-                    <a href="#img7"><img src="../images/lugaresHolbox/Manglares/1.jpg"></a>
+                    <a href="#img7"><img src="<?=$url_base?>resources/images/lugaresHolbox/Manglares/1.jpg"></a>
                     <a href="#img9">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -321,7 +322,7 @@ session_start();
                 <h3>Manglares</h3>
                 <div class="imagen">
                     <a href="#img8">&#60;</a>
-                    <a href="#img10"><img src="../images/lugaresHolbox/Manglares/2.jpg"></a>
+                    <a href="#img10"><img src="<?=$url_base?>resources/images/lugaresHolbox/Manglares/2.jpg"></a>
                     <a href="#img10">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -331,7 +332,7 @@ session_start();
                     <h3>Yalahau</h3>
                     <div class="imagen">
                         <a href="#img9">&#60;</a>
-                        <a href="#img11"><img src="../images/lugaresHolbox/Yalahau/1.jpg"></a>
+                        <a href="#img11"><img src="<?=$url_base?>resources/images/lugaresHolbox/Yalahau/1.jpg"></a>
                         <a href="#img11">></a>
                     </div>
                     <a class="cerrar" href="#galeria">X</a>
@@ -341,7 +342,7 @@ session_start();
                 <h3>Yalahau</h3>
                 <div class="imagen">
                     <a href="#img10">&#60;</a>
-                    <a href="#img12"><img src="../images/lugaresHolbox/Yalahau/2.jpg"></a>
+                    <a href="#img12"><img src="<?=$url_base?>resources/images/lugaresHolbox/Yalahau/2.jpg"></a>
                     <a href="#img12">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -351,7 +352,7 @@ session_start();
                 <h3>Tiburón Ballena</h3>
                 <div class="imagen">
                     <a href="#img11">&#60;</a>
-                    <a href="#img13"><img src="../images/lugaresHolbox/whaleshark/1.jpg"></a>
+                    <a href="#img13"><img src="<?=$url_base?>resources/images/lugaresHolbox/whaleshark/1.jpg"></a>
                     <a href="#img13">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -361,7 +362,7 @@ session_start();
                 <h3>Tiburón Ballena</h3>
                 <div class="imagen">
                     <a href="#img12">&#60;</a>
-                    <a href="#img14"><img src="../images/lugaresHolbox/whaleshark/2.png"></a>
+                    <a href="#img14"><img src="<?=$url_base?>resources/images/lugaresHolbox/whaleshark/2.png"></a>
                     <a href="#img14">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -371,7 +372,7 @@ session_start();
                 <h3>Punta Mosquito</h3>
                 <div class="imagen">
                     <a href="#img13">&#60;</a>
-                    <a href="#img15"><img src="../images/lugaresHolbox/Playa/1.jpg"></a>
+                    <a href="#img15"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/1.jpg"></a>
                     <a href="#img15">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -381,7 +382,7 @@ session_start();
                     <h3>Punta Mosquito</h3>
                     <div class="imagen">
                         <a href="#img14">&#60;</a>
-                        <a href="#img16"><img src="../images/lugaresHolbox/Playa/10.jpg"></a>
+                        <a href="#img16"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/10.jpg"></a>
                         <a href="#img16">></a>
                     </div>
                     <a class="cerrar" href="#galeria">X</a>
@@ -391,7 +392,7 @@ session_start();
                 <h3>Punta Mosquito</h3>
                 <div class="imagen">
                     <a href="#img15">&#60;</a>
-                    <a href="#img17"><img src="../images/lugaresHolbox/Playa/5.jpg"></a>
+                    <a href="#img17"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/5.jpg"></a>
                     <a href="#img17">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -400,7 +401,7 @@ session_start();
                 <h3>Punta Mosquito</h3>
                 <div class="imagen">
                     <a href="#img16">&#60;</a>
-                    <a href="#img18"><img src="../images/lugaresHolbox/Playa/3.jpg"></a>
+                    <a href="#img18"><img src="<?=$url_base?>resources/images/lugaresHolbox/Playa/3.jpg"></a>
                     <a href="#img18">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -410,7 +411,7 @@ session_start();
                 <h3>Punta Coco</h3>
                 <div class="imagen">
                     <a href="#img17">&#60;</a>
-                    <a href="#img19"><img src="../images/lugaresHolbox/PuntaCoco/1.jpg"></a>
+                    <a href="#img19"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/1.jpg"></a>
                     <a href="#img19">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -420,7 +421,7 @@ session_start();
                 <h3>Punta Coco</h3>
                 <div class="imagen">
                     <a href="#img18">&#60;</a>
-                    <a href="#img20"><img src="../images/lugaresHolbox/PuntaCoco/4.jpg"></a>
+                    <a href="#img20"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/4.jpg"></a>
                     <a href="#img20">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -430,7 +431,7 @@ session_start();
                     <h3>Punta Coco</h3>
                     <div class="imagen">
                         <a href="#img19">&#60;</a>
-                        <a href="#img21"><img src="../images/lugaresHolbox/PuntaCoco/8.jpg"></a>
+                        <a href="#img21"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/8.jpg"></a>
                         <a href="#img21">></a>
                     </div>
                     <a class="cerrar" href="#galeria">X</a>
@@ -440,7 +441,7 @@ session_start();
                 <h3>Punta Coco</h3>
                 <div class="imagen">
                     <a href="#img20">&#60;</a>
-                    <a href="#img1"><img src="../images/lugaresHolbox/PuntaCoco/6.jpg"></a>
+                    <a href="#img1"><img src="<?=$url_base?>resources/images/lugaresHolbox/PuntaCoco/6.jpg"></a>
                     <a href="#img1">></a>
                 </div>
                 <a class="cerrar" href="#galeria">X</a>
@@ -452,11 +453,11 @@ session_start();
                 <div class="tamano-7" id="menu-footer">
                     <nav>
                         <ul>
-                            <li><a href="../inicio.php">Inicio</a></li>
-                            <li><a href="Historia.php">Historia</a></li>
-                            <li><a href="LugaresHolbox.php">¿Qué hacer?</a></li>
-                            <li><a href="Gastronomia.php">Gastronomía</a></li>
-                            <li><a href="FloraFauna.php">Flora y Fauna</a></li>
+                            <li><a href="<?=$url_base?>paginas/Inicio">Inicio</a></li>
+                            <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                            <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                            <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                            <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
                             <li><a href="experienciasH.php">Experiencias</a></li>
                             <li><a href="catalogo.php">Catálogo</a></li>
                             <?php

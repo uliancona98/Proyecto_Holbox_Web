@@ -36,13 +36,13 @@ $url_base = 'http://localhost/aplicacion/';
 * Controlador por defecto
 * @global string $controlador_predefinido
 */
-$controlador_predefinido = 'usuario';
+$controlador_predefinido = 'paginas';
 
 /**
 * Accion por defecto
 * @global string $accion_predefinida
 */
-$accion_predefinida = 'iniciar';
+$accion_predefinida = 'Inicio';
 
 /**
 * Extension del archivo del modelo
