@@ -1,9 +1,13 @@
 <?php
                     /*Carga las imagenes de LOS USUARIOS*/
 function consultar($sentencia){
-                     include('core/Conexion.php');      
-                    $query = "SELECT * FROM restaurantes"." " . $sentencia;
-                    $conexion= getConexion();                  
+
+                    include('core/Conexion.php');  
+                     $conector = new Conexion();
+                     $conexion= $conector ->get_conexion();
+
+                    $query = "SELECT * FROM restaurantes"." " . $sentencia;                    
+
                     if($conexion){
                         $arrayRestaurantes = array();
                         $resultado = $conexion->query($query);
