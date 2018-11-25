@@ -37,10 +37,11 @@ function generarTitulo() {
 	return "Catalogo de restaurantes";
 }
 
-function cargarPrincipal(){  
+function cargarPrincipal(){
     $HTMLrespuesta= array();
     $resultados= consultar(" ");
-    for($i=0; $i< count($resultados); $i++){
+
+       for($i=0; $i< count($resultados); $i++){
             array_push($HTMLrespuesta,presentarResultados($resultados[$i]));
        }
     return implode(" ", $HTMLrespuesta);
@@ -96,7 +97,6 @@ function realizarBusqueda(){
 function sinResultados(){
     return "No se encontraron restaurantes";
 }
-
 function presentarResultados($rest){
 
     switch ($rest['precio']) {
@@ -112,18 +112,22 @@ function presentarResultados($rest){
         default:
             break;
     }
-    $image= base64_encode($rest['imagen_restaurante']);
+    $image= base64_encode($rest['imagen']);
     //<img src="data:image/jpg;base64,<?php echo base64_encode($arrayPublicaciones[$i]['imagen']);" alt="mangle" style="width:90%"/>
     
  $columnas= <<<XYZ
             <div class="contenedor-restaurante">
-                <img src="data:image/jpg;base64,{$image}" alt="{$rest['nombre_restaurante']}" style="width:100%">
+                <img src="data:image/jpg;base64,{$image}" alt="{$rest['nombre']}" style="width:100%">
                 <div class="descripcion" >
-                    <div class="item name" > {$rest['nombre_restaurante']} </div>
+                    <div class="item name" > {$rest['nombre']} </div>
                     <div class="item price">{$precio}</div>
-                    <div class="item horario">{$rest['horario_abierto']}-{$rest['horario_cerrado']} </div>
-                    <div class="item telefono">{$rest['telefono_restaurante']} </div>
+                    <div class="item horario">{$rest['horarioAbierto']}-{$rest['horarioCerrado']} </div>
+                    <div class="item telefono">{$rest['direccion']} </div>
                 </div>
+
+                <span class="infoAdicional">
+                 {$rest['direccion']}
+                </span>
             </div>
 XYZ;
 return $columnas;
