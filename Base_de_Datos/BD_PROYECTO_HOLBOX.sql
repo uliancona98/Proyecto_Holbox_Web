@@ -158,7 +158,6 @@ color varchar(10),
 textColor varchar(10),
 inicio datetime,
 final datetime,
-disponibilidad boolean default true,
 foreign key(id_usuario)
 references USUARIOS(id_usuario)
 )Engine = InnoDB;
@@ -238,3 +237,4 @@ select * from permisos order by id_modulo;
 select * from permisos;
  SELECT * FROM MODULOS;
  select * from roles_permisos order by id_rol;
+
