@@ -12,7 +12,9 @@
 * Nombre de la aplicacion
 * @global string $aplicacion
 */
-$aplicacion = 'Proyecto';
+
+$aplicacion = 'Proyecto_Holbox_Web';
+
 
 /**
 * Sistema operativo (WINDOWS|UNIX|MAC)
@@ -24,25 +26,26 @@ $sistema_operativo = 'WINDOWS';
 * Directorio de instalacion de la aplicacion
 * @global string $directorio_base
 */
-$directorio_base = 'c:/xampp/htdocs/aplicacion/';
-
+$directorio_base = 'c:/wamp64/www/Proyecto_Holbox_Web/';
 /**
 * URL de la aplicacion
 * @global string $url_base
 */
-$url_base = 'http://localhost/aplicacion/';
+
+$url_base = 'http://localhost/Proyecto_Holbox_Web/';
+
 
 /**
 * Controlador por defecto
 * @global string $controlador_predefinido
 */
-$controlador_predefinido = 'usuario';
 
+$controlador_predefinido = 'catalogo';
 /**
 * Accion por defecto
 * @global string $accion_predefinida
 */
-$accion_predefinida = 'iniciar';
+$accion_predefinida = 'iniciarCatalogo';
 
 /**
 * Extension del archivo del modelo

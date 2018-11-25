@@ -20,7 +20,6 @@ include ('config/variables.php');
 
 /** Cargar las funciones generales */
 include ('libs/funciones.php');
-
 /**
 * Controlador solicitado
 * @global string $controlador
@@ -34,7 +33,7 @@ $controlador = '';
 $accion = '';
 
 // Cargar controlador y accion, sino existen se cargan los predefinidos
-// definidos en variables.php
+
 if (! empty ($variables_ruta[$controlador_id]))
 	$controlador = $variables_ruta[$controlador_id];
 else
@@ -49,9 +48,9 @@ else
 $controlador_archivo = 'controlador/' . $controlador . $controlador_extension;
 
 // Incluimos el controlador o detenemos todo si no existe
-if (file_exists ($controlador_archivo))
+if (file_exists ($controlador_archivo)){
 	include ($controlador_archivo);
-else {
+}else {
 	echo 'Controlador ' . $controlador . ' no existe.';
 }
 
