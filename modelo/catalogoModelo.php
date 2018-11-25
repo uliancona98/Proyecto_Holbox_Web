@@ -37,11 +37,10 @@ function generarTitulo() {
 	return "Catalogo de restaurantes";
 }
 
-function cargarPrincipal(){
+function cargarPrincipal(){  
     $HTMLrespuesta= array();
     $resultados= consultar(" ");
-
-       for($i=0; $i< count($resultados); $i++){
+    for($i=0; $i< count($resultados); $i++){
             array_push($HTMLrespuesta,presentarResultados($resultados[$i]));
        }
     return implode(" ", $HTMLrespuesta);
@@ -97,6 +96,7 @@ function realizarBusqueda(){
 function sinResultados(){
     return "No se encontraron restaurantes";
 }
+
 function presentarResultados($rest){
 
     switch ($rest['precio']) {
