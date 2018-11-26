@@ -1,5 +1,15 @@
 <?php
-require('config/variables_BD.php');
+//require('../config/variables_BD.php');
+if($_SESSION['eliminarImagen']===true){
+    $url_base = $_SESSION['url_base'];
+    echo $url_base;
+    //require_once("config/variables_BD.php");
+
+    require_once("../config/variables_BD.php");
+    
+}else{
+    require_once("config/variables_BD.php");
+}
 
 
 class Conexion{

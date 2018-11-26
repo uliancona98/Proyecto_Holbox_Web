@@ -24,8 +24,8 @@ $sistema_operativo = 'WINDOWS';
 * Directorio de instalacion de la aplicacion
 * @global string $directorio_base
 */
-$directio_base = 'D:/Programas/Wamp/www/Proyecto_Final_Web/Proyecto_Holbox_Web/';
-//$directorio_base = 'c:/xampp/htdocs/aplicacion/';
+
+$directorio_base = 'D:/Programas/Wamp/www/Proyecto_Final_Web/Proyecto_Holbox_Web/';
 
 /**
 * URL de la aplicacion
@@ -37,13 +37,13 @@ $url_base = 'http://localhost/Proyecto_Final_Web/Proyecto_Holbox_Web/';
 * Controlador por defecto
 * @global string $controlador_predefinido
 */
-$controlador_predefinido = 'bitacora';
+$controlador_predefinido = 'paginas';
 
 /**
 * Accion por defecto
 * @global string $accion_predefinida
 */
-$accion_predefinida = 'verBitacora';
+$accion_predefinida = 'Inicio';
 
 /**
 * Extension del archivo del modelo
@@ -63,4 +63,9 @@ $vista_extension = 'Vista.php';
 */
 $controlador_extension = 'Controlador.php';
 
+/**
+ * Array que guarda errores en tiempo de ejecucion
+ * @global array $errores
+ */
+$errores = array();
 ?>

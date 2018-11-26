@@ -31,11 +31,11 @@ h1, h2, h3, h4 {
 /*Selectores de contenido*/
 .header-general {
     
-    background-image: url("banner.jpg");
-    overflow: hidden;
-    background-size: cover;
-    position:inherit;
-    box-shadow: 0 2px 5px 0;
+    background-image: url("banner.jpg") !important;
+    overflow: hidden !important;
+    background-size: cover !important;
+    position:inherit !important;
+    box-shadow: 0 2px 5px 0 !important;
 }
 
 [class*="tamano-"] {

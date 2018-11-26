@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>BITACORA</title>
@@ -6,6 +8,11 @@
         <link rel="stylesheet" href="<?=$url_base;?>resources/bootstrap-3.3.7/css/csscustom.css">  
         <link href="<?=$url_base;?>resources/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="<?=$url_base;?>resources/plugins/datepicker/datepicker3.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">             
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilosGenerales.css">    
+        <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">          
         <style>
         body
         {
@@ -23,9 +30,56 @@
             margin-top:25px;
         }
         </style>
+
+
+
     </head>
     <body>
-       <div class="container box">
+    <div class="header-general">
+        <div style="padding: 8px 16px; overflow: hidden;">
+            <div class="tamano-5" id="logo"><span>HOLBOX</span></div>
+            <div class="tamano-5" id="logo-derecho"><span>VIVE UNA EXPERIENCIA SIN IGUAL</span></div>
+        </div>
+        <div class="menu-general">
+            <nav>
+                <ul class ="nav">
+                    <li><a href="<?= $url_base ?>paginas/Inicio">Inicio</a></li>
+                        <li><a href="">Secciones</a>
+                            <ul>
+                                <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                                <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                                <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                                <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="paginas/experienciasH.php">Experiencias</a></li>
+                        <li><a href="paginas/catalogo.php">Catálogo</a></li>
+                    <?php
+                    include("libs/manejador_sesiones.php");
+                    $menu = get_Menu();
+
+                    foreach( $menu as $opcion => $link){
+                        $link = "../".$link;
+                        echo "<li><a href=\"$link\">$opcion</a></li>";
+                    }
+                    ?>
+                </ul>
+            </nav>
+        </div>
+        <div id="sesiones">
+            <?php
+            if(empty($_SESSION)){
+                echo "<label><a href='{$url_base}inicioSesion/iniciarSesion'>Iniciar Sesión  </a></label>";
+                echo "<label><a href='{$url_base}registroUsuario/registrarUsuario'> Registrarse</a></label>";
+            }else{
+                echo "<label>Bienvenido ".$_SESSION['nombre'] ." </label>";
+                echo "<label><a href='{$url_base}inicioSesion/logout'>Cerrar Sesión </a></label>";
+            }
+            ?>
+        </div>
+    </div>
+    <div>      
+        <div class="container box">
            <h1 align="center">BITÁCORA</h1>
            <br />
            <div class="table-responsive"  style="overflow-x: hidden;">
@@ -85,12 +139,12 @@
                             ?>
                         </select>                                             
                    </div>
-                        <div class="col-md-3">
-                            <input type="submit" name="search" id="search" value="Buscar por filtrado" class="btn btn-info active" />
-                        </div>
-                        <div class="col-md-3">
-                            <input type="submit" name="mostrar_todos" id="mostrar_todos" value="Mostrar Todos" class="btn btn-info active" />
-                        </div>
+                    <div class="col-md-3">
+                        <input type="submit" name="search" id="search" value="Buscar por filtrado" class="btn btn-info active" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" name="mostrar_todos" id="mostrar_todos" value="Mostrar Todos" class="btn btn-info active" />
+                    </div>
             <!--<form> -->                       
                </div>
                <br/>
@@ -108,11 +162,66 @@
                </table>
            </div>
        </div>
-       <script src="<?=$url_base;?>resources/bootstrap-3.3.7/js/jQuery-2.1.4.min.js"></script>
-       <script src="<?=$url_base;?>resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-       <script src="<?=$url_base;?>resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-       <script src="<?=$url_base;?>resources/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-       <script src="<?=$url_base;?>resources/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+    </div>
+    <div>
+    <style>
+        .myfooter{
+            background-color: rgba(51,51,51,.95);
+            margin-top: 10px;
+            box-shadow: 0 2px 5px 0;
+        }
+
+        body {
+            line-height: 1.5 !important;
+            background-color: #839A91 !important;
+        }
+
+    </style>
+
+    <div class="myfooter">   
+            <div id="about">
+                <div class="tamano-7" id="menu-footer">
+                    <nav>
+                    <ul>
+                        <li><a href="<?=$url_base?>paginas/Inicio">Inicio</a></li>
+                        <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                        <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                        <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                        <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
+                        <li><a href="paginas/experienciasH.php">Experiencias</a></li>
+                        <li><a href="paginas/catalogo.php">Catálogo</a></li>
+                        <?php
+                            $menu = get_Menu();
+
+                            foreach( $menu as $opcion => $link){
+                                echo "<li><a href=\"$link\">$opcion</a></li>";
+                            }
+                        ?>
+                    </ul>
+                    </nav>
+                </div>
+                <div class="tamano-5" id="nosotros">
+                    <h3>Sobre Nosotros</h3>
+                    <ul>
+                        <li>Chuc Arcia Alejandro</li>
+                        <li>Ancona Graniel Ulises</li>
+                        <li>Interian Bojorquez Shaid</li>
+                        <li>Pech Huchin Humberto</li>
+                        <li>Sosa Lopez Wendy</li>
+                    </ul>
+                </div>
+            </div>
+            <p id="copyright">
+                Todos los derechos reservados &copy;. Holbox 2018
+            </p>
+        </div> 
+
+    </div>
+        <script src="<?=$url_base;?>resources/bootstrap-3.3.7/js/jQuery-2.1.4.min.js"></script>
+        <script src="<?=$url_base;?>resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="<?=$url_base;?>resources/plugins/datepicker/bootstrap-datepicker.js"></script>
+        <script src="<?=$url_base;?>resources/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="<?=$url_base;?>resources/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>             
     </body>
 </html>
 
