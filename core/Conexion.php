@@ -1,5 +1,6 @@
 <?php
-require('../config/variables_BD.php');
+require('config/variables_BD.php');
+
 
 class Conexion{
     private $conexion_db;

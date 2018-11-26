@@ -24,25 +24,26 @@ $sistema_operativo = 'WINDOWS';
 * Directorio de instalacion de la aplicacion
 * @global string $directorio_base
 */
-$directorio_base = 'c:/xampp/htdocs/aplicacion/';
+$directio_base = 'D:/Programas/Wamp/www/Proyecto_Final_Web/Proyecto_Holbox_Web/';
+//$directorio_base = 'c:/xampp/htdocs/aplicacion/';
 
 /**
 * URL de la aplicacion
 * @global string $url_base
 */
-$url_base = 'http://localhost/aplicacion/';
+$url_base = 'http://localhost/Proyecto_Final_Web/Proyecto_Holbox_Web/';
 
 /**
 * Controlador por defecto
 * @global string $controlador_predefinido
 */
-$controlador_predefinido = 'usuario';
+$controlador_predefinido = 'bitacora';
 
 /**
 * Accion por defecto
 * @global string $accion_predefinida
 */
-$accion_predefinida = 'iniciar';
+$accion_predefinida = 'verBitacora';
 
 /**
 * Extension del archivo del modelo
