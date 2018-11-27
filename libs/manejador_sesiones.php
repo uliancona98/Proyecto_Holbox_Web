@@ -6,8 +6,9 @@ function get_menu(){
         
         if($_SESSION['tipo_usuario'] == "Usuario"){
             $menu['Perfil'] = "{$url_base}perfilUsuario/verPerfil";
+            $menu['Informacion Perfil'] = "{$url_base}informacionPerfil/verInformacionPerfil";
             $menu['Feed'] = "paginas/feed.php";
-            $menu['Bitacora'] = "bitacora/verBitacora";
+            //$menu['Bitacora'] = "bitacora/verBitacora";
             //header("Location: ../");
             //exit();
         }else if($_SESSION['tipo_usuario'] == "Administrador"){

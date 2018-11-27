@@ -64,7 +64,7 @@
         </header>          
     <!-- Se muestran las imagenes en una tabla-->
         <center><br><br><br>
-            <a href="<?=$url_base?>vista/informacion_perfilVista.php"> Ver mi información </a>
+            <a href='<?{$url_base}?>informacionPerfil/verInformacionPerfil'> Ver mi información </a>
         <div class="container">           
             <form action="" method="POST" enctype ="multipart/form-data">
                 <input type="file" name="imagen" required=""/>
