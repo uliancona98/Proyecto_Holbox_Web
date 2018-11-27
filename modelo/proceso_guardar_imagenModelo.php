@@ -1,9 +1,7 @@
 <?php 
     /*Carga las imagenes del usuario*/                
-    echo "Ha";
 /*"<?=$url_base?>*/
     require_once("core/Conexion.php");
-    echo "Huu";
     //require_once("../core/Conexion.php");
 
     $con = new Conexion();
@@ -21,7 +19,8 @@
                         $comentario = $_POST['comentario'];
                     }
                     $id_usuario = $_SESSION['id_usuario'];
-                    $query = "INSERT INTO publicaciones(id_usuario, imagen, comentario) VALUES ('$id_usuario', '$imagen', '".$comentario."')";
+                    var_dump($imagen, $comentario);
+                    $query = "INSERT INTO publicaciones(id_usuario, imagen, comentario) VALUES ($id_usuario, '$imagen', '".$comentario."')";
                     $resultado = $conexion->query($query); 
                     if(!$resultado){
                         echo "<p id='error' style='color:red'>Error al agregar publicacion</p>";                

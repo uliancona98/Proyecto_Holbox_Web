@@ -1,8 +1,11 @@
 <?php
-    function accion_verInformacionPerfil() {
+        session_start();
+
+    function accion_iniciar() {
         global $aplicacion, $url_base, $variables_ruta, $controlador, $accion;
         /** @ignore */
         // Incluye el modelo que corresponde
+        echo($_SESSION['id']);
         $contrasena="";
         global $nombre;
         $nombre="";

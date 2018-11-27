@@ -8,7 +8,7 @@ function cargarImagenes($id){
     $con = new Conexion();
     $conexion = $con->get_conexion();    
     $usuario = $_SESSION['id_usuario'];
-    $query = "SELECT * FROM publicaciones WHERE id_usuario = '$usuario' AND disponibilidad=true";                   
+    $query = "SELECT * FROM publicaciones WHERE id_usuario = $id AND disponibilidad=true";                   
     if($conexion){
         //$arrayPublicaciones = array();
         $resultado = $conexion->query($query);
@@ -41,6 +41,7 @@ function cargarImagenes($id){
                 </div> <!--fin de div contenedor-imagenes-->
                 </div> <!--fin de div galeria-->
                 <?php
+                //var_dump($arrayPublicaciones[$i]['imagen']);
                 for($i=$publicacionesCount-1;$i>=0;$i--){                                                                   
                     $picture = base64_encode($arrayPublicaciones[$i]['imagen']);
                     $img = "data:image/jpg;base64,".$picture;

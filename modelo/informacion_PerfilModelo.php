@@ -23,12 +23,9 @@ function cargarDatos($id){
     }
 }
 function eliminarCuenta($id){
-    ECHO "yi";
     require_once("core/Conexion.php");
     $con = new Conexion();
     $conexion = $con->get_conexion();
-    var_dump($conexion);
-    echo $id;
 	$query = "UPDATE usuarios SET disponibilidad=false WHERE id_usuario=$id";
 
     $resultado1 = $conexion->query($query);
@@ -36,9 +33,9 @@ function eliminarCuenta($id){
     $query2 = "UPDATE publicaciones SET disponibilidad=false WHERE id_usuario=$id";
     $resultado2 = $conexion->query($query2);
     if($resultado2 && $resultado1){ //logout
-        header("Location:{$url_base}verInformacionPerfil");
+        header("Location:{$url_base}iniciar");
     }else{
-        header("Location:{$url_base}verInformacionPerfil");
+        header("Location:{$url_base}iniciar");
         echo "No se elimino";
     }    
 

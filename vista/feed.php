@@ -10,16 +10,16 @@ session_start();
     //header("Location:../sistemas/sistema_login/login.php");
 }*/
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-Mx">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
-    <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">   
-    <link rel="stylesheet" href="../archivos_necesarios/css/estilosGenerales.css">    
-    <link rel="stylesheet" href="../archivos_necesarios/css/estilos_feed.css">
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilos_feed.css">   
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilosGenerales.css">
+        <script src="<?=$url_base?>resources/js/jquery.min.js"></script>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montaga'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feed</title>
     </head>
     <body>
         <header class="header-general">
@@ -30,23 +30,20 @@ session_start();
             <div class="menu-general">
                 <nav>
                     <ul class ="nav">
-                        <li><a href="../inicio.php">Inicio</a></li>
+                        <li><a href="<?= $url_base ?>paginas/Inicio">Inicio</a></li>
                         <li><a href="">Secciones</a>
                             <ul>
-                                <li><a href="Historia.php">Historia</a></li>
-                                <li><a href="LugaresHolbox.php">¿Qué hacer?</a></li>
-                                <li><a href="Gastronomia.php">Gastronomía</a></li>
-                                <li><a href="FloraFauna.php">Flora y Fauna</a></li>
+                                <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                                <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                                <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                                <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
                             </ul>
                         </li>
-                        <li><a href="experienciasH.php">Experiencias</a></li>
-                        <li><a href="catalogo.php">Catálogo</a></li>
                         <?php
-                        include("../sistemas/sistema_login/manejador_sesiones.php");
+                        include("libs/manejador_sesiones.php");
                         $menu = get_Menu();
 
                         foreach( $menu as $opcion => $link){
-                            $link = "../".$link;
                             echo "<li><a href=\"$link\">$opcion</a></li>";
                         }
                         ?>
@@ -56,15 +53,16 @@ session_start();
             <div id="sesiones">
                 <?php
                 if(empty($_SESSION)){
-                    echo "<label><a href='../sistemas/sistema_login/login.php'>Iniciar Sesión  </a></label>";
-                    echo "<label><a href='../sistemas/sistema_signup/signup.php'> Registrarse</a></label>";
+                    echo "<label><a href='{$url_base}inicioSesion/iniciarSesion'>Iniciar Sesión  </a></label>";
+                    echo "<label><a href='{$url_base}registroUsuario/registrarUsuario'> Registrarse</a></label>";
                 }else{
+                    echo "<script src = '{$url_base}resources/js/autologout.js'></script>";
                     echo "<label>Bienvenido ".$_SESSION['nombre'] ." </label>";
-                    echo "<label><a href='../sistemas/sistema_login/logout.php'>Cerrar Sesión </a></label>";
+                    echo "<label><a href='{$url_base}inicioSesion/logout'>Cerrar Sesión </a></label>";
                 }
                 ?>
             </div>
-            </header>
+        </header>
         <div id="contenido">
 
             <!-- The Modal -->
@@ -84,41 +82,7 @@ session_start();
                 </div>
                     <?php
                     /*Carga las imagenes de LOS USUARIOS*/
-                    include("../config/conexion2.php");       
-                    $query = "SELECT * FROM publicaciones";                   
-                    if($conexion){
-                        $arrayPublicaciones = array();
-                        $resultado = $conexion->query($query);
-                        $bandera = false;
-                        while($row = $resultado->fetch_assoc()){                     
-                            $bandera = true;
-                            $arrayPublicaciones[]=$row;
-                        }
-                        if(!$bandera){
-                            echo "No hay publicaciones para mostrar";
-                        }else{                       
-                            $publicacionesCount = count($arrayPublicaciones);
-                            ?><div class="flex-container flex-flora"><?php
-                            for($i=$publicacionesCount-1;$i>=0;$i--){                               
-                            ?>  
-                                <div class="contenedor-flora">
-                                    <img src="data:image/jpg;base64,<?php echo base64_encode($arrayPublicaciones[$i]['imagen']);?>" alt="mangle" style="width:90%"/>                                                           
-                                    <div class="descripcion" >
-                                        <p><?php echo "Usuario ".$arrayPublicaciones[$i]['id_usuario'].": ";echo $arrayPublicaciones[$i]['comentario']; ?></p>
-                                    </div>
-                                    <span class="infoAdicional">
-                                        <?php echo "Usuario ".$arrayPublicaciones[$i]['id_usuario'].": " ?>
-                                        <?php echo $arrayPublicaciones[$i]['comentario']; ?>
-                                    </span>
-                                </div>                                           
-                            <?php                                       
-                            }?>
-                            </div>
-                            <?php
-                        }
-                    }else{
-                        echo "Conexion con la base de datos fallida";
-                    }
+                    cargarFeed();
                     ?>                 
                 
             </div>
@@ -169,23 +133,21 @@ session_start();
             }
 
         </script>        
+        
         <footer>
             <div id="about">
                 <div class="tamano-7" id="menu-footer">
                     <nav>
                         <ul>
-                            <li><a href="../inicio.php">Inicio</a></li>
-                            <li><a href="Historia.php">Historia</a></li>
-                            <li><a href="LugaresHolbox.php">¿Qué hacer?</a></li>
-                            <li><a href="Gastronomia.php">Gastronomía</a></li>
-                            <li><a href="FloraFauna.php">Flora y Fauna</a></li>
-                            <li><a href="experienciasH.php">Experiencias</a></li>
-                            <li><a href="catalogo.php">Catálogo</a></li>
+                            <li><a href="<?=$url_base?>paginas/Inicio">Inicio</a></li>
+                            <li><a href="<?= $url_base ?>paginas/Historia">Historia</a></li>
+                            <li><a href="<?= $url_base ?>paginas/LugaresHolbox">¿Qué hacer?</a></li>
+                            <li><a href="<?= $url_base ?>paginas/Gastronomia">Gastronomía</a></li>
+                            <li><a href="<?= $url_base ?>paginas/FloraFauna">Flora y Fauna</a></li>
                             <?php
                                 $menu = get_Menu();
 
                                 foreach( $menu as $opcion => $link){
-                                    $link = "../".$link;
                                     echo "<li><a href=\"$link\">$opcion</a></li>";
                                 }
                             ?>

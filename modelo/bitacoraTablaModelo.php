@@ -1,5 +1,5 @@
 <?php
-    $connect = mysqli_connect("localhost", "root", "19980519uli", "proyecto_holbox_db");//Configurar los datos de conexion
+    $connect = mysqli_connect("localhost", "root", "", "proyecto_holbox_db");//Configurar los datos de conexion
     $columns = array('id_usuario','fecha_registro', 'hora_registro', 'actividad', 'id_permiso','id_sistema');
     $query = 'SELECT Bi.fecha_registro, Bi.hora_registro, Bi.actividad, Bi.id_permiso, Bi.id_usuario,'
         . ' Bi.id_sistema, Us.nombre_usuario, Pe.nombre_permiso, Si.nombre_sistema FROM bitacora Bi '

@@ -1,15 +1,26 @@
 <?php
     session_start();
+    $nombre = "";
+    $redireccion = "catalogo/editar";
+
+    $nombre = "perfil de usuario";
+    $redireccion = "paginas/Inicio";
+     $a= validarPermisos($nombre);
+    if (empty($a)){   
+        header("location:" . $url_base . $redireccion);
+    }
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es-Mx">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">             
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilosGenerales.css">
+        <script src="<?=$url_base?>resources/js/jquery.min.js"></script>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montaga'>
         <title>Mi Perfil</title>
-        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilos_informacion_perfil_usuario.css">
-        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilosGenerales.css">    
-        <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">          
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <link rel="stylesheet" href="<?=$url_base?>resources/css/estilos_informacion_perfil_usuario.css">          
     </head>
     <body>
     <header class="header-general">

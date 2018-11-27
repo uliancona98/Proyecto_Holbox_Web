@@ -1,5 +1,13 @@
 <?php
     session_start();
+    $nombre = "";
+    $nombre = "mis publicaciones";
+    $redireccion = "paginas/Inicio";
+     $a= validarPermisos($nombre);
+
+    if (empty($a)){   
+        header("location:" . $url_base . $redireccion);
+    }
 ?>
 <html>
     <head>
@@ -64,7 +72,6 @@
         </header>          
     <!-- Se muestran las imagenes en una tabla-->
         <center><br><br><br>
-            <a href='<?{$url_base}?>informacionPerfil/verInformacionPerfil'> Ver mi información </a>
         <div class="container">           
             <form action="" method="POST" enctype ="multipart/form-data">
                 <input type="file" name="imagen" required=""/>
@@ -81,7 +88,7 @@
         </center>
         <center><br><br><br>
                 <?php
-                    cargarImagenes($SESSION['id_usuario']);
+                    cargarImagenes($_SESSION['id_usuario']);
                 ?>
         </center> 
 

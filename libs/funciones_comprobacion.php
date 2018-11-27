@@ -5,14 +5,12 @@ function comprobarEmail($email){
     }
     return false;
 }
-
 function comprobarContrasena($contrasena){
     if(strlen($contrasena) >= 6 && strlen($contrasena) <= 20){
         return true;
     }
     return false;
 }
-
 function isError($errores, $campo){
     $return = "";
     if(!empty($errores) && !empty($campo) && isset($errores[$campo]) && !empty($errores[$campo])){
@@ -20,7 +18,6 @@ function isError($errores, $campo){
     }
     return $return;
 }
-
 //regresa los permisos en array
 function validarPermisos($nombreModulo){
     global $aplicacion, $url_base;    
@@ -52,5 +49,4 @@ function validarPermisos($nombreModulo){
         return consultar($query);
     }       
 }
-
 ?>

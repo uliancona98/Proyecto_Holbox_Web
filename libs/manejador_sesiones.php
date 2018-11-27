@@ -1,35 +1,46 @@
 <?php
+//session_start();
 function get_menu(){
+    #verificar si hay  sesion activa
     global $url_base;
     $menu = array();
-    if(isset($_SESSION['tipo_usuario'])){
+    
+    #experienciasm catalogo y feed será visible para todos
+    $menu['Feed'] = $url_base . "feed/iniciar";
+    $menu['Experiencias'] = $url_base . "experiencias/iniciar";
+    $menu['Catalogo'] = $url_base . "catalogo/iniciar";
+    if(!empty($_SESSION)){
+        #Hacer $modulos global
+        $modulos = array(
+            "calendario de eventos" =>  "calendario/iniciar",
+            "mis publicaciones" => "publicaciones/iniciar",
+            "perfil de usuario" => "perfil/iniciar",
+            //"catalogo de restaurantes" => "catalogo/iniciar",
+            //"experiencias" => "experiencias/iniciar",
+            "recuperacion de cuenta" => "recuperacionCuenta/iniciar",
+            "administracion de usuarios" => "administracionUsuarios/iniciar",
+            "bitacora" => "bitacora/iniciar"
+        );
+        $nombre_modulos = array(
+            "calendario de eventos" =>  "Gestionar Eventos",
+            "mis publicaciones" => "Mis publicaciones",
+            "perfil de usuario" => "Perdil",
+            //"catalogo de restaurantes" => "Catalogo de restaurantes",
+            //"experiencias" => "Experiencias",
+            "recuperacion de cuenta" => "Recuperacion cuenta",
+            "administracion de usuarios" => "Administracion de Usuarios",
+            "bitacora" => "Bitacora"
+        );
         
-        if($_SESSION['tipo_usuario'] == "Usuario"){
-            $menu['Perfil'] = "{$url_base}perfilUsuario/verPerfil";
-            $menu['Informacion Perfil'] = "{$url_base}informacionPerfil/verInformacionPerfil";
-            $menu['Feed'] = "paginas/feed.php";
-            //$menu['Bitacora'] = "bitacora/verBitacora";
-            //header("Location: ../");
-            //exit();
-        }else if($_SESSION['tipo_usuario'] == "Administrador"){
-            //$menu['perfil'] = "../paginas/paginas_administrador/perfil.php";
-            $menu['Gestionar eventos'] = "{$url_base}calendario/iniciar";
-            $menu['Feed'] = "paginas/feed.php";
-            $menu['Bitacora'] = "bitacora/verBitacora";
-            //header("Location: ../");
-            //xit();
-        }else{
-            //echo "USUARIO NO IDENTIFICADO";
+        foreach( $modulos as $key => $contenido){
+            $temp = validarPermisos($key);
+            
+            
+                if(!empty($temp)){
+                    $menu[$nombre_modulos[$key]] = $url_base.$contenido;
+                }
         }
-        //return $menu;
-    }else{
-        $menu['Feed'] = "paginas/feed.php";
-        //LA OPCION DE INICIO.HTML?
-        //echo "TU NO DEBERÍAS ESTAR AQUÍ";
-        //return $menu;
     }
-    return $menu;
+        return $menu;
 }
-
-
 ?>

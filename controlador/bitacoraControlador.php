@@ -1,5 +1,5 @@
 <?php
-function accion_verBitacora() {
+function accion_iniciar() {
     global $aplicacion, $url_base, $variables_ruta, $controlador, $accion;
 
     /** @ignore */
